@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "perfopt (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "perfopt (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
