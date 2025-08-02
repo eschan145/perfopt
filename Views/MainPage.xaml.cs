@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 
 using Microsoft.UI.Xaml.Documents;
 
+using perfopt.Native;
+
 namespace perfopt.Views
 {
     public partial class MainPage : Page
@@ -126,38 +128,11 @@ namespace perfopt.Views
             throw new Exception("Failed to get RAM info.");
         }
 
-        private void TrimProcessWorkingSet(int processId)
-        {
-            IntPtr hProcess = OpenProcess(PROCESS_SET_QUOTA | PROCESS_QUERY_INFORMATION, false, processId);
-            if (hProcess == IntPtr.Zero)
-            {
-                return;
-            }
-            EmptyWorkingSet(hProcess);
-            CloseHandle(hProcess);
-        }
-
-        public void ClearMemory()
-        {
-            Process[] processes = Process.GetProcesses();
-            foreach (var proc in processes)
-            {
-                try
-                {
-                    TrimProcessWorkingSet(proc.Id);
-                }
-                catch
-                {
-                }
-            }
-            Console.WriteLine("Memory cleared.");
-        }
-
         private unsafe void ClearMemory(object sender, RoutedEventArgs e)
         {
-            int* ptr = (int*)123;
-            *ptr += 1;
-            this.ClearMemory();
+            //int* ptr = (int*)123;
+            //*ptr += 1;
+            native.clearMemory();
         }
 
         public void Update()
@@ -225,7 +200,7 @@ namespace perfopt.Views
 
             if (counter % frequency == 0)
             {
-                ClearMemory();
+                native.clearMemory();
             }
 
             ramDisplay.Inlines.Clear();
