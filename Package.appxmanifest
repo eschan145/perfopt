@@ -15,7 +15,7 @@
   <mp:PhoneIdentity PhoneProductId="bc9d6535-1779-459c-a4c0-fbde8085009b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>perfopt</DisplayName>
+    <DisplayName>Windows Performance Optimizer</DisplayName>
     <PublisherDisplayName>User Name</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
