@@ -36,7 +36,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="native\build\libperfopt.dll">
+      <None Include="native\build\Debug\perfopt.dll">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <TargetPath>libperfopt.dll</TargetPath>
       </None>

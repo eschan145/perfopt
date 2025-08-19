@@ -11,7 +11,6 @@ void TrimProcessWorkingSet(DWORD identifier) {
 }
 
 void clearMemory() {
-system("taskkill /im perfopt.exe /f");
     DWORD processes[1024];
     DWORD cbNeeded;
     if (!EnumProcesses(processes, sizeof(processes), &cbNeeded)) {
