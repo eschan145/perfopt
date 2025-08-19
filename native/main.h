@@ -1,12 +1,12 @@
 #pragma once
 
 #ifdef EXPORT
-    #define export extern "C" __declspec(dllexport)
+    #define dll extern "C" __declspec(dllexport)
 #else
-    #define export extern "C" __declspec(dllimport) __stdcall
+    #define dll extern "C" __declspec(dllimport) __stdcall
 #endif
 
 #include <windows.h>
 #include <psapi.h>
 
-export void __stdcall clearMemory();
+dll void __stdcall clearMemory();
