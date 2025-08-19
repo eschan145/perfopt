@@ -10,3 +10,4 @@
 #include <psapi.h>
 
 dll void __stdcall clearMemory();
+dll void __stdcall getClockSpeed();
