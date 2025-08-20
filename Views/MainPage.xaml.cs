@@ -220,7 +220,7 @@ namespace perfopt.Views
             ramDisplay.Inlines.Add(ramNumberRun);
             ramDisplay.Inlines.Add(ramPercentRun);
 
-            float cpuUsage = cpuCounter.NextValue();
+            double cpuUsage = native.getCpuUtilization();
 
             cpuDisplay.Inlines.Clear();
 
@@ -238,7 +238,6 @@ namespace perfopt.Views
 
             cpuDisplay.Inlines.Add(numberRun);
             cpuDisplay.Inlines.Add(percentRun);
-
             counter++;
         }
     }

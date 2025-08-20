@@ -6,5 +6,11 @@ namespace perfopt.Native
     {
         [DllImport("libperfopt.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern void clearMemory();
+
+        [DllImport("libperfopt.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern double getCpuClockSpeed();
+
+        [DllImport("libperfopt.dll", CallingConvention = CallingConvention.StdCall)]
+        public static extern double getCpuUtilization();
     }
 }
